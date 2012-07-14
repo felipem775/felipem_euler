@@ -24,12 +24,14 @@ public class Problem2 {
 		/*
 		 * Inicilizo valores
 		 */
+		int limite = 4000001;
+		
 		int suma = 0;
 		int anterior = 1;
 		int i = 1;
 		int aux = 0;
 		
-		while (i < 4000001) {
+		while (i < limite) {
 			aux = i;
 			if (aux %2 ==0)suma += aux;
 			i += anterior;
