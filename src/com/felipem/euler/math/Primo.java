@@ -4,6 +4,7 @@
 package com.felipem.euler.math;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -15,14 +16,14 @@ public class Primo {
 	/**
 	 * Realizo un listado de números primos conocidos para validar un número
 	 */
-	private List<Integer> primosConocidos = new ArrayList<Integer>();
+	private List<Long> primosConocidos = new ArrayList<Long>();
 	
 	/**
 	 * Añado los dos primeros números primos para optimizar un poco el proceso
 	 */
 	public Primo() {
-		primosConocidos.add(2);
-		primosConocidos.add(3);
+		primosConocidos.add(2L);
+		primosConocidos.add(3L);
 	}
 	
 	/**
@@ -30,7 +31,7 @@ public class Primo {
 	 * @param numero
 	 * @return
 	 */
-	public boolean esPrimo(int numero) {
+	public boolean esPrimo(long numero) {
 		if (numero < 2 || numero % 2 == 0) {
 			return false;
 		}
@@ -38,9 +39,9 @@ public class Primo {
 		if (numero > primosConocidos.get(primosConocidos.size()-1)) {
 			
 			// Calculo hasta la mitad por optimizar
-			int mitad = numero/2;
+			long mitad = numero/2;
 			// Empiezo a mirar por el último primo
-			for (int i = primosConocidos.get(primosConocidos.size()-1); i < mitad; i = i+2) {
+			for (long i = primosConocidos.get(primosConocidos.size()-1); i < mitad; i = i+2) {
 				primoConocido(i);
 			}
 			
@@ -54,13 +55,15 @@ public class Primo {
 	 * @param numero
 	 * @return
 	 */
-	private boolean primoConocido(int numero) {
+	private boolean primoConocido(long numero) {
 		
 		if (primosConocidos.contains(numero)) {
 			return true;
 		}
-		for (int i = 0; i < primosConocidos.size(); i++) {
-			if (numero % primosConocidos.get(i).intValue() == 0 ) return false;
+		Iterator<Long> it = primosConocidos.iterator();
+		while (it.hasNext()) {
+			long primoConocido = it.next();
+			if (numero % primoConocido == 0) return false;
 		}
 		primosConocidos.add(numero);
 		return true;
