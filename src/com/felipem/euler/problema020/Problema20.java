@@ -5,11 +5,12 @@ package com.felipem.euler.problema020;
 
 import java.math.BigInteger;
 
-import com.felipem.euler.math.Factorial;
 
 /**
  * @author felipem ( http://felipem.com )
  *
+ * Por problemas con el factorial y pasarlo a String, finalmente he optado por la solución de
+ * http://rianjs.net/2011/05/java-solution-to-project-euler-problem-20
  */
 public class Problema20 {
 
@@ -32,14 +33,21 @@ public class Problema20 {
 	 */
 	public static void main(String[] args) {
 		
-		Double factorial100 = Factorial.getFactorial(100);
-		System.out.println(factorial100);
-		factorial100 = new Double(123456789);
+		BigInteger factorial100 = BigInteger.valueOf(1);
+		for (int i = 1; i <= 100; i++)
+			factorial100 = factorial100.multiply(BigInteger.valueOf(i));
+		
+		
+		String snum = factorial100.toString();
+		System.out.println(snum);
+		
 		int suma = 0;
 		
-		while (factorial100 > 0) {
-			suma += factorial100 % 10;
-			factorial100 = Math.floor(factorial100 / 10);
+		 
+		for (int i = 0; i < snum.length(); i++)
+		{
+			int n = Integer.parseInt(snum.substring(i,i+1));
+			suma += n;
 		}
 		System.out.println(suma);
 	}
