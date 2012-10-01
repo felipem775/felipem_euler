@@ -4,3 +4,6 @@
 *.jar
 *.war
 *.ear
+
+# Cofig de eclipse
+.settings
