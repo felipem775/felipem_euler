@@ -8,7 +8,7 @@ import java.util.List;
 import com.felipem.euler.math.Primo;
 
 /**
- * @author felipe
+ * @author felipem ( http://felipem.com )
  *
  */
 public class Problema003 {
