@@ -75,4 +75,17 @@ public class Primo {
 		primosConocidos.add(numero);
 		return true;
 	}
+	
+	/**
+	 * Cargo la lista de los números primos hasta el número dado
+	 * @param numero
+	 */
+	public void cargarPrimosHasta(long numero) {
+		long ultimoComprobado = primosConocidos.get(primosConocidos.size()-1);
+		
+		while (ultimoComprobado < numero) {
+			esPrimo(ultimoComprobado);
+			ultimoComprobado+=2;
+		}
+	}
 }
