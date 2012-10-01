@@ -19,6 +19,13 @@ public class Primo {
 	private List<Long> primosConocidos = new ArrayList<Long>();
 	
 	/**
+	 * @return the primosConocidos
+	 */
+	public List<Long> getPrimosConocidos() {
+		return primosConocidos;
+	}
+
+	/**
 	 * Añado los dos primeros números primos para optimizar un poco el proceso
 	 */
 	public Primo() {
@@ -38,10 +45,10 @@ public class Primo {
 		// Miro si es un número que puede que ya haya comprobado
 		if (numero > primosConocidos.get(primosConocidos.size()-1)) {
 			
-			// Calculo hasta la mitad por optimizar
-			long mitad = numero/2;
+			// Calculo hasta la raiz por optimizar
+			long raiz = (long) Math.sqrt(numero) + 1;
 			// Empiezo a mirar por el último primo
-			for (long i = primosConocidos.get(primosConocidos.size()-1); i < mitad; i = i+2) {
+			for (long i = primosConocidos.get(primosConocidos.size()-1); i < raiz; i = i+2) {
 				primoConocido(i);
 			}
 			
