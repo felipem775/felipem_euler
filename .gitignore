@@ -5,5 +5,8 @@
 *.war
 *.ear
 
-# Cofig de eclipse
+# Config de eclipse
 .settings
+
+# Carpeta binarios
+bin
