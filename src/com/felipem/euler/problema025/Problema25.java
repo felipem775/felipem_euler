@@ -4,11 +4,6 @@
 package com.felipem.euler.problema025;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import com.felipem.euler.file.Fichero;
 
 
 /**

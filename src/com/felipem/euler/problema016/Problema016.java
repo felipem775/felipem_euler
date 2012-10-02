@@ -4,7 +4,6 @@
 package com.felipem.euler.problema016;
 
 import java.math.BigInteger;
-import java.text.DecimalFormat;
 
 /**
  * @author felipem ( http://felipem.com )
