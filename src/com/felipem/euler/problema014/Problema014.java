@@ -54,29 +54,6 @@ public class Problema014 {
 	}
 
 	/**
-	 * Función recursiva que calcula el número de iteraciones.
-	 * Para muchas iteraciones produce excepción: StackOverflowError
-	 * 
-	 * @param i
-	 * @param iteracion
-	 * @return
-	 */
-	private static int calcularTerminosRecursivo(int i, int iteracion) {
-		if (i % 2 == 0) {
-			i = i / 2;
-		}
-		else {
-			i = i * 3 + 1;
-		}
-		if (i == 1) {
-			return iteracion;
-		}
-		else {
-			return calcularTerminosRecursivo(i, iteracion + 1);
-		}
-	}
-	
-	/**
 	 * Calcula las iteraciones.
 	 * IMPORTANTE i tipo long, como integer falla
 	 * @param i 
