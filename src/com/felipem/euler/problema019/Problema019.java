@@ -3,6 +3,10 @@
  */
 package com.felipem.euler.problema019;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 /**
  * @author felipem ( http://felipem.com )
  *
@@ -40,8 +44,16 @@ public class Problema019 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		GregorianCalendar ini = new GregorianCalendar(1901,Calendar.JANUARY,1);
+		GregorianCalendar end = new GregorianCalendar(2000,Calendar.DECEMBER,31);
+		int sunday = 0;
+		while (ini.before(end)) {
+			if (ini.get(Calendar.DAY_OF_WEEK) == 1 ) {
+				sunday++;
+			}
+			ini.add(Calendar.MONTH, 1);
+		}
+		System.out.println(sunday);
 	}
 
 }
