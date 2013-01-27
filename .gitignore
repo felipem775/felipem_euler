@@ -10,3 +10,5 @@
 
 # Carpeta binarios
 bin
+/META-INF
+/build.properties
